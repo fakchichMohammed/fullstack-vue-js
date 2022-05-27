@@ -24,6 +24,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.6.0",
     "mongoose": "^6.3.4",
+    "mongoose-unique-validator": "^3.0.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.16"
   }
