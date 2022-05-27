@@ -10,11 +10,11 @@ const app = express();
 // configure mongoose and database
 mongoose.set("useCreateIndex", true);
 mongoose
-  .connect(config.database, { useNewUrlParser: true })
+  .connect(config.database)
   .then(() => {
     console.log("Database is connected");
   })
-  .catch((err) => {
+  .catch( err => {
     console.log({ database_error: err });
   });
 // db configuration ends here
