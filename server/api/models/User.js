@@ -12,8 +12,7 @@ const userSchema = mongoose.Schema({
     required: [true, "Please include your email"],
     unique: true
   },
-  password: { type: String, required: [true, "Please include your password"] },/* 
-  tokens: [{ token: { type: String, required: true } }] */
+  password: { type: String, required: [true, "Please include your password"] },
 });
 userSchema.plugin(uniqueValidator);
 /* 
