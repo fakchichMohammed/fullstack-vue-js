@@ -1,81 +1,96 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <router-view></router-view>
 </template>
 
+<script>
+
+export default {
+  name: 'App',
+  components: {
+  }
+}
+</script>
+
 <style>
-@import './assets/base.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
+  max-width: 100%;
 }
 
-header {
-  line-height: 1.5;
+body {
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding:32px;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+img {
+  max-width: 100%;
+  border-radius: 8px;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+.card {
+  max-width: 100%;
+  width: 540px;
+  background:white;
+  border-radius: 16px;
+  padding:32px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.card__title {
+  text-align:center;
+  font-weight: 800;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+.card__subtitle {
+  text-align: center;
+  color:#666;
+  font-weight: 500;
 }
+
+  .button {
+    background: #2196F3;
+    color:white;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 15px;
+    border: none;
+    width: 100%;
+    padding: 16px;
+    transition: .4s background-color;
+  }
+
+  .card__action {
+    color:#2196F3;
+    text-decoration: underline;
+  }
+
+  .card__action:hover {
+    cursor:pointer;
+  }
+
+  .button:hover {
+    cursor:pointer;
+    background: #1976D2;
+  }
+
+  .button--disabled {
+    background:#cecece;
+    color:#ececec
+  }
+  .button--disabled:hover {
+    cursor:not-allowed;
+    background:#cecece;
+  }
+
 </style>
