@@ -34,7 +34,7 @@ exports.createUser = (req, res, next) => {
 
 // configure user login
 exports.userLogin = (req, res, next) => {
-  let fetchedUser;
+ /*  let fetchedUser;
   // find the user by its email
   User.findOne({ email: req.body.email })
     .then((user) => {
@@ -69,6 +69,15 @@ exports.userLogin = (req, res, next) => {
       return res.status(401).json({
         message: "Invalid authentication credentials!"
       });
-    });
+    }); */
+    const user = {
+      id: Date.now(),
+      email: 'example@animal.com',
+      password: 'test'
+    }
+
+    jwt.sign({user}, 'secretkey',(err, token) =>{
+       res.json({token});
+    } )
 };
 // login configuration ends here
